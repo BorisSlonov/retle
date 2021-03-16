@@ -18,9 +18,11 @@
 .swiper-slide img {
     display: block;
     margin: 0 auto;
-    object-fit: contain;
+    object-fit: cover;
     object-position: 50% 50%;
     border-radius: 10px;
+    height: 300px;
+    width: 500px;
 }
 
 .swiper-slide img {
@@ -28,10 +30,24 @@
 
 }
 
+.swiper-container-cube .swiper-cube-shadow {
+    opacity: .15;
+}
+
 @media(max-width:767px) {
     .swiper-slide img {
         max-width: 90%;
 
+    }
+
+    .swiper-slide img {
+        width: 100%;
+    }
+}
+
+@media(max-width:520px) {
+    .swiper-slide img {
+        height: 260px;
     }
 }
 

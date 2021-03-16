@@ -16,6 +16,7 @@
     font-size: 3.2rem;
     margin: 0;
     line-height: 1;
+    max-width: 500px;
 }
 
 .page1__sub-tlte {
@@ -61,12 +62,7 @@
 
 }
 
-@media(max-width:550px) {
 
-    .span-logo {
-        margin: 15px 0;
-    }
-}
 
 
 @media(max-width:420px) {

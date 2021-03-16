@@ -23,18 +23,24 @@ window.addEventListener('DOMContentLoaded', () => {
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
-  
+    speed: 2000,
+    effect: 'fade',
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+        el: '.swiper-pagination',
     },
-  
+    autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+    },
+
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-   
-  });
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+
+});
+
+
 

@@ -70,10 +70,6 @@
         "webpack-stream": "^5.2.1",
         "yargs": "^15.4.1"
     },
-    "dependencies": {
-        "smart-grid": "^2.1.2"
-    },
-   
     "lint-staged": {
         "!(_*).scss": [
             "stylelint --fix --color --config ./.stylelintrc"
