@@ -74,5 +74,8 @@
         "*.js": [
             "eslint --fix --color"
         ]
+    },
+    "dependencies": {
+        "jquery": "^3.6.0"
     }
 }

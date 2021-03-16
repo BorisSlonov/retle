@@ -12,7 +12,25 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: $lightGreen;
+    color: $lightBrown;
+    background-color:  #fde8cd2f;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    transition: all .35s;
+}
+
+
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: lighten($lightBrown, 5%);
+    background-color:  #fde8cd44;
+   
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+ font-size: 18px;
 }
 
 .swiper-slide img {
@@ -22,13 +40,10 @@
     object-position: 50% 50%;
     border-radius: 10px;
     height: 300px;
-    width: 500px;
+    width: 100%;
 }
 
-.swiper-slide img {
-    max-width: 85%;
 
-}
 
 .swiper-container-cube .swiper-cube-shadow {
     opacity: .15;
@@ -36,7 +51,7 @@
 
 @media(max-width:767px) {
     .swiper-slide img {
-        max-width: 90%;
+        max-width: 100%;
 
     }
 

@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
-    speed: 2000,
+    speed: 1200,
     effect: 'fade',
     // If we need pagination
     pagination: {
