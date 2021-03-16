@@ -1,0 +1,22 @@
+.btn {
+    font-size: 1.1rem;
+
+    border-radius: 25px;
+    color: $lightBrown;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+
+
+    &_main {
+        display: inline-block;
+        background-color: $lightGreen;
+        transition: all .35s;
+        border: 1px solid transparent;
+
+        &:hover {
+            border: 1px solid $darkGreen;
+            background-color: darken($lightGreen, 5%)
+
+        }
+    }
+}

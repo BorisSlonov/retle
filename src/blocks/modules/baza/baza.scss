@@ -1,0 +1,45 @@
+.section-baza {
+    background-color: $lightBrown;
+    padding: 50px 0;
+}
+.baza__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.baza__item {
+    max-width: calc(50% - 15px);
+}
+
+
+.baza__title {
+    display: inline-block;
+    font-size: 2.4rem;
+    border-bottom: 1px solid lighten($darkBrown, 20%);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.baza__text {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+@media(max-width:767px) {
+    .baza__row {
+        flex-direction: column-reverse;
+    }
+
+    .baza__item {
+        max-width: 100%;
+    }
+
+    .baza__item_img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+       
+    }
+}
