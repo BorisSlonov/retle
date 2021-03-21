@@ -23,12 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
-    speed: 1200,
     effect: 'fade',
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
+
     autoplay: {
         delay: 10000,
         disableOnInteraction: false,
@@ -42,5 +38,17 @@ const swiper = new Swiper('.swiper-container', {
 
 });
 
+const swiperHouses = new Swiper('.swiper-container-houses', {
+    // Optional parameters
+    loop: true,
+    spaceBetween: 25,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next-houses',
+        prevEl: '.swiper-button-prev-houses',
+    }
+
+});
 
 

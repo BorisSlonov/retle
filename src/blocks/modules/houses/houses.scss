@@ -1,0 +1,109 @@
+.section-houses {
+    padding: 50px 0;
+}
+
+.houses {
+    margin-top: 30px;
+}
+
+
+
+.single-house__item_slider {
+    max-width: 50%;
+}
+
+.single-house {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $lightBrown;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.single-house__item_text {
+    margin-right: 20px;
+}
+
+.single-house__title {
+    font-size: 2rem;
+}
+
+.single-house__list {
+    margin-top: 10px;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.single-house__sub-list {
+    margin-left: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.swiper-button-prev-houses,
+.swiper-button-next-houses {
+    color: $lightBrown;
+    font-size: 15px;
+    background-color: $darkGreen;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+
+
+}
+
+
+.swiper-button-prev-houses::after,
+.swiper-button-next-houses::after {
+    color: #fff;
+    font-size: 18px;
+    font-family: swiper-icons;
+    text-transform: none !important;
+    letter-spacing: 0;
+    text-transform: none;
+    font-variant: initial;
+    line-height: 1;
+}
+
+.swiper-button-prev-houses {
+    left: 10px;
+}
+
+.swiper-button-next-houses {
+    right: 10px;
+}
+
+.swiper-button-prev-houses:hover,
+.swiper-button-next-houses:hover {
+    background-color: $lightGreen;
+}
+
+.swiper-container-houses {
+    overflow: hidden;
+    padding: 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+
+@media(max-width:768px) {
+    .single-house {
+        flex-direction: column;
+    }
+
+    .single-house__item_slider {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
