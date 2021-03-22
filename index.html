@@ -28,6 +28,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Pacifico&family=Ubuntu:wght@500&display=swap');
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/main.css">
@@ -42,7 +43,7 @@
     <div class="container">
         <div class='header__body'>
             <!-- logo -->
-            <a href="#" class='header__logo'>
+            <a href="/" class='header__logo'>
                 <span class="header__logo-name">
                     Ретле
                 </span>
@@ -61,14 +62,14 @@
                 <!-- header__list -->
                 <ul class='header__list'>
                     <li class=''>
-                        <a href='#baza' class='header__link'>
+                        <a href='#baza-otdiha' class='header__link'>
                             <span class="link-hover">
                                 база отдыха
                             </span>
                         </a>
                     </li>
                     <li class=''>
-                        <a href='#reasons' class='header__link'>
+                        <a href='#services' class='header__link'>
                             <span class="link-hover">
                                 услуги
                             </span>
@@ -77,7 +78,7 @@
                     <li class=''>
                         <a href='#catalog' class='header__link'>
                             <span class="link-hover">
-                                цены
+                                домики
                             </span>
                         </a>
                     </li>
@@ -89,7 +90,7 @@
                         </a>
                     </li>
                     <li class=''>
-                        <a href='#mainPopup' class='btn btn_main'>
+                        <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                             <span class="">
                                 Заказать звонок
                             </span>
@@ -120,7 +121,7 @@
                     <span class="page1__sub-tlte">
                         Забронируйте домик уже сегодня
                     </span>
-                    <a href="#mainPopup" class="btn btn_main">
+                    <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                         Забронировать
                     </a>
                 </div>
@@ -141,7 +142,7 @@
         <div class="swiper-slide">
             <img src="img/sliders/1.jpg" alt="">
         </div>
-        <div class="swiper-slide">
+          <div class="swiper-slide">
             <img src="img/sliders/2.jpg" alt="">
         </div>
     </div>
@@ -155,14 +156,15 @@
 </div>
 
 
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-    <section class="section-baza">
+    <section id="baza-otdiha" class="section-baza">
     <div class="container">
-        <div class="baza">
+        <div  class="baza">
             <div class="baza__row">
                 <div class="baza__item baza__item_img">
                     <!-- Slider main container -->
@@ -209,7 +211,7 @@
         </div>
     </div>
 </section>
-    <section class="section-services">
+    <section id="services" class="section-services">
     <div class="container">
         <h2 class="main-h2">
             Что мы предлагаем
@@ -277,13 +279,13 @@
             <h2 class="promo-callback__title">
                 Закажите обратный звонок и мы свяжемся с вами в ближайшее время
             </h2>
-            <a class="btn btn_main" href="#">
+            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                 Заказать звонок
             </a>
         </div>
     </div>
 </section>
-    <section class="section-houses">
+    <section id="catalog" class="section-houses">
     <div class="container">
         <h2 class="main-h2">
             Отличный отдых по доступным ценам
@@ -298,7 +300,10 @@
                             </h3>
                             <ul class="single-house__list">
                                 <li class="single-house__li">
-                                    — 2 комнаты
+                                    — 2 этажа
+                                </li>
+                                <li class="single-house__li">
+                                    — 2-4 человека
                                 </li>
                                 <li class="single-house__li">
                                     — Душ, туалет
@@ -350,29 +355,37 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home1/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home1/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home1/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home1/4.jpg" alt="">
         </div>
+        <div class="swiper-slide">
+            <img src="img/home1/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home1/6.jpg" alt="">
+        </div>
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -382,7 +395,6 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
@@ -395,47 +407,39 @@
                             </h3>
                             <ul class="single-house__list">
                                 <li class="single-house__li">
-                                    — 2 комнаты
+                                    — 1 этаж
+                                </li>
+
+                                <li class="single-house__li">
+                                    — 2 человека
                                 </li>
                                 <li class="single-house__li">
-                                    — Душ, туалет
+                                    — Душ, туалет на территории
                                 </li>
                                 <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                    </ul>
+                                    — Микроволновая печь
+
                                 </li>
                                 <li class="single-house__li">
-                                    — На 2-м этаже
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальная кровать
-                                        </li>
-                                        <li>
-                                            — Каминчик
-                                        </li>
-                                        <li>
-                                            — Вид со 2-го этажа на озеро
-                                        </li>
-                                    </ul>
+                                    — Холодильник
+                                </li>
+                                <li class="single-house__li">
+                                    — Электрическая плитка
+                                </li>
+
+                                <li class="single-house__li">
+                                    — Микроволновая печь
+                                </li>
+
+                                <li class="single-house__li">
+                                    — Чайник
+                                </li>
+                                <li class="single-house__li">
+                                    — 2 односпальные кровати
+                                </li>
+
+                                <li class="single-house__li">
+                                    — Каминчик
                                 </li>
                                 <li class="single-house__li">
                                     — Постельное белье
@@ -447,29 +451,33 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home2/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home2/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home2/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home2/4.jpg" alt="">
         </div>
+        <div class="swiper-slide">
+            <img src="img/home2/5.jpg" alt="">
+        </div>
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -479,7 +487,6 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
@@ -492,7 +499,13 @@
                             </h3>
                             <ul class="single-house__list">
                                 <li class="single-house__li">
+                                    — 1 этаж
+                                </li>
+                                <li class="single-house__li">
                                     — 2 комнаты
+                                </li>
+                                <li class="single-house__li">
+                                    — по 2 односпальные кровати
                                 </li>
                                 <li class="single-house__li">
                                     — Душ, туалет
@@ -520,20 +533,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="single-house__li">
-                                    — На 2-м этаже
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальная кровать
-                                        </li>
-                                        <li>
-                                            — Каминчик
-                                        </li>
-                                        <li>
-                                            — Вид со 2-го этажа на озеро
-                                        </li>
-                                    </ul>
-                                </li>
+
                                 <li class="single-house__li">
                                     — Постельное белье
                                 </li>
@@ -544,29 +544,55 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home3/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home3/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home3/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home3/4.jpg" alt="">
         </div>
+        <div class="swiper-slide">
+            <img src="img/home3/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/6.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/7.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/8.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/9.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/10.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/11.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/12.jpg" alt="">
+        </div>
+
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -576,7 +602,6 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
@@ -641,29 +666,55 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home3/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home3/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home3/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home3/4.jpg" alt="">
         </div>
+        <div class="swiper-slide">
+            <img src="img/home3/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/6.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/7.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/8.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/9.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/10.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/11.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home3/12.jpg" alt="">
+        </div>
+
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -673,7 +724,6 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
@@ -738,29 +788,30 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home4/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home4/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home4/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home4/4.jpg" alt="">
         </div>
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -770,7 +821,6 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
@@ -783,13 +833,16 @@
                             </h3>
                             <ul class="single-house__list">
                                 <li class="single-house__li">
-                                    — 2 комнаты
+                                    — 2-х этажный
                                 </li>
                                 <li class="single-house__li">
-                                    — Душ, туалет
+                                    — 3 номера по 2 человека
                                 </li>
                                 <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
+                                    — Душ, туалет в каждом номере
+                                </li>
+                                <li class="single-house__li">
+                                    — Гостиная совмещенная с  кухней
                                     <ul class="single-house__sub-list">
                                         <li>
                                             — 2-х спальный диван
@@ -835,29 +888,36 @@
                                     — Беседка с мангалом
                                 </li>
                             </ul>
-                            <a class="btn btn_main" href="#mainPopup">
+                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
                                 Забронировать
                             </a>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             <!-- Slider main container -->
-<div class="swiper-container swiper-container1">
+<div class="swiper-container-home">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home5/1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home5/2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/1.jpg" alt="">
+            <img src="img/home5/3.jpg" alt="">
         </div>
         <div class="swiper-slide">
-            <img src="img/sliders/2.jpg" alt="">
+            <img src="img/home5/4.jpg" alt="">
         </div>
+        <div class="swiper-slide">
+            <img src="img/home5/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/home5/6.jpg" alt="">
+        </div>
+
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -867,11 +927,9 @@
     <div class="swiper-button-next"></div>
 
 </div>
-
                         </div>
                     </div>
                 </div>
-
 
 
             </div>
@@ -884,155 +942,184 @@
 
     </div>
 </section>
-    <section class="section-local">
+    <section id="local" class="section-local">
     <div class="container">
+        <h2 class="main-h2">
+            Интересные места рядом
+        </h2>
         <div class="local">
-            <h2 class="main-h2">
-                Интересные места рядом
-            </h2>
-        </div>
 
-        <div class="local__row">
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
+            <div class="local__row">
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
+
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
+            <div class="local__row">
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
+
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
+            <div class="local__row">
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
-        </div>
 
-        <div class="local__row">
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
 
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
-                </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
-
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
-                </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="local__row">
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
-                </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
-
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
-                </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
-                </div>
-            </div>
-
-            <div class="local__col">
-                <div class="local__item local__item_img">
-                    <img src="img/sliders/1.jpg" alt="">
-                </div>
-                <div class="local__item local__item_text">
-                    <h3 class="local__h3">
-                        Старая Русса
-                    </h3>
-                    <p class="local__text">
-                        Лучший курорт России с 2007 года
-                    </p>
+                <div class="local__col">
+                    <div class="local__item local__item_img">
+                        <img src="img/sliders/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+    <div id="mainPopup" style="display: none;">
+    <div class="mainPopup">
+        <h2 class="mainPopup__title">
+            Оставьте заявку
+        </h2>
+        <span class="mainPopup__sub-title">
+            и мы свяжемся с вами в ближайшее время
+        </span>
+        <form action="#" class="mainPopup-form">
+            <input class="mainPopup-form__input" placeholder="Номер телефона" type="phone">
+            <input class="mainPopup-form__input" placeholder="Имя" type="name">
+            <button class="btn btn_main popupBtn">
+                Отправить
+            </button>
+        </form>
+    </div>
+</div>
 </main>
 
-    
+    <footer class="footer">
+   <!-- logo -->
+   <a href="/" class='header__logo'>
+    <span class="header__logo-name">
+        Ретле
+    </span>
+    <span class="header__logo-sub-name">
+        база отдыха
+    </span>
+</a>
+</footer>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/vendor.js"></script>
 </body>

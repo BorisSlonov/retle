@@ -38,18 +38,52 @@ const swiper = new Swiper('.swiper-container', {
 
 });
 
+
+const swiperHome = new Swiper('.swiper-container-home', {
+    // Optional parameters
+    loop: true,
+    effect: 'fade',
+
+
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+
+});
+
 const swiperHouses = new Swiper('.swiper-container-houses', {
     // Optional parameters
+    autoHeight: true,
     loop: true,
     effect: 'coverflow',
     spaceBetween: 10,
-
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next-houses',
         prevEl: '.swiper-button-prev-houses',
     }
 
+});
+
+
+
+
+
+$('a[href*="#"]').click(function (event) {
+	if (
+		location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		var target = $(this.hash);
+		target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		if (target.length) {
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: target.offset().top - 200 + "px"
+			}, 1000);
+		}
+	}
 });
 
 

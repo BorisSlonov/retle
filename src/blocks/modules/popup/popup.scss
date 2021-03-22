@@ -1,0 +1,29 @@
+#mainPopup {
+    border-radius: 10px;
+    background-color: $lightBrown;
+}
+
+.mainPopup-form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        margin-top: 25px;
+        border: none;
+        border-bottom: 2px solid transparent;
+        outline: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+
+        &:focus {
+            border-bottom: 2px solid $lightGreen;
+        }
+    }
+}
+.popupBtn {
+    margin-top: 30px;
+}
+
+.mainPopup__title {
+    font-size: 1.8rem;
+}

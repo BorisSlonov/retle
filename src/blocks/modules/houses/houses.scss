@@ -8,7 +8,9 @@
 
 
 
+
 .single-house__item_slider {
+    position: relative;
     max-width: 60%;
 }
 
@@ -27,6 +29,7 @@
 
 .single-house__item_text {
     margin-right: 20px;
+    max-width: 320px;
 }
 
 .single-house__title {

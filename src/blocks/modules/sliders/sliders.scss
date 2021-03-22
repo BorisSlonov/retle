@@ -12,8 +12,8 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: $lightBrown;
-    background-color:  #fde8cd2f;
+    color: $darkGreen;
+    background-color: #fde8cd83;
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -24,13 +24,14 @@
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    color: lighten($lightBrown, 5%);
-    background-color:  #fde8cd44;
-   
+    color: lighten($darkGreen, 5%);
+    background-color: #fde8cd97;
+
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
- font-size: 18px;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 18px;
 }
 
 .swiper-slide img {
@@ -69,4 +70,3 @@
         height: 260px;
     }
 }
-

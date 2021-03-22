@@ -622,8 +622,8 @@ img {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #FDE8CD;
-  background-color: #fde8cd2f;
+  color: #025955;
+  background-color: #fde8cd83;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -632,8 +632,8 @@ img {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #fef3e6;
-  background-color: #fde8cd44;
+  color: #03726d;
+  background-color: #fde8cd97;
 }
 
 .swiper-button-next:after,
@@ -756,6 +756,7 @@ img {
 }
 
 .single-house__item_slider {
+  position: relative;
   max-width: 60%;
 }
 
@@ -774,6 +775,7 @@ img {
 
 .single-house__item_text {
   margin-right: 20px;
+  max-width: 320px;
 }
 
 .single-house__title {
@@ -849,6 +851,10 @@ img {
   position: relative;
 }
 
+.local {
+  margin-top: 30px;
+}
+
 .section-local {
   padding: 50px 0;
 }
@@ -870,6 +876,42 @@ img {
   padding: 20px;
   text-align: center;
   line-height: 1.5;
+}
+
+#mainPopup {
+  border-radius: 10px;
+  background-color: #FDE8CD;
+}
+
+.mainPopup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainPopup-form__input {
+  margin-top: 25px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.mainPopup-form__input:focus {
+  border-bottom: 2px solid #00917C;
+}
+
+.popupBtn {
+  margin-top: 30px;
+}
+
+.mainPopup__title {
+  font-size: 1.8rem;
+}
+
+.footer {
+  background-color: #025955;
+  padding: 25px 0;
 }
 
 @media (max-width: 1024px) {
@@ -1024,6 +1066,17 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .local__row {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .local__col {
+    margin-top: 20px;
   }
 }
 
