@@ -54,7 +54,7 @@
 .swiper-button-next-houses {
     color: $lightBrown;
     font-size: 15px;
-    background-color: $darkGreen;
+    background-color: $lightGreen;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -97,7 +97,7 @@
 
 .swiper-button-prev-houses:hover,
 .swiper-button-next-houses:hover {
-    background-color: $lightGreen;
+    background-color: $darkGreen;
 }
 
 .swiper-container-houses {
