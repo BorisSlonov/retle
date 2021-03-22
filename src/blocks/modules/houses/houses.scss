@@ -9,7 +9,11 @@
 
 
 .single-house__item_slider {
-    max-width: 50%;
+    max-width: 60%;
+}
+
+.single-house__item_slider .swiper-slide img {
+    height: 400px;
 }
 
 .single-house {
@@ -32,7 +36,7 @@
 .single-house__list {
     margin-top: 10px;
     line-height: 1.5;
-    font-size: 1.1rem;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 
@@ -134,5 +138,9 @@
 
     .single-house__sub-list  {
         margin-left: 10px;
+    }
+
+    .single-house__item_slider .swiper-slide img {
+        height: 320px;
     }
 }

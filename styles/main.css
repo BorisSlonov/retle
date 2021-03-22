@@ -756,7 +756,11 @@ img {
 }
 
 .single-house__item_slider {
-  max-width: 50%;
+  max-width: 60%;
+}
+
+.single-house__item_slider .swiper-slide img {
+  height: 400px;
 }
 
 .single-house {
@@ -779,7 +783,7 @@ img {
 .single-house__list {
   margin-top: 10px;
   line-height: 1.5;
-  font-size: 1.1rem;
+  font-size: 15px;
   margin-bottom: 10px;
 }
 
@@ -843,6 +847,29 @@ img {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+.section-local {
+  padding: 50px 0;
+}
+
+.local__row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.local__col {
+  flex-basis: calc(33.333% - 10px);
+  background-color: #FDE8CD;
+  border-radius: 10px;
+}
+
+.local__item_text {
+  padding: 20px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
@@ -1059,6 +1086,10 @@ img {
 
   .single-house__sub-list {
     margin-left: 10px;
+  }
+
+  .single-house__item_slider .swiper-slide img {
+    height: 320px;
   }
 }
 
