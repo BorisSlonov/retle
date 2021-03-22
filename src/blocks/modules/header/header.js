@@ -41,7 +41,8 @@ const swiper = new Swiper('.swiper-container', {
 const swiperHouses = new Swiper('.swiper-container-houses', {
     // Optional parameters
     loop: true,
-    spaceBetween: 25,
+    effect: 'coverflow',
+    spaceBetween: 10,
 
     // Navigation arrows
     navigation: {

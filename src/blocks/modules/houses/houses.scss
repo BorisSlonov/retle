@@ -33,6 +33,7 @@
     margin-top: 10px;
     line-height: 1.5;
     font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
 .single-house__sub-list {
@@ -62,10 +63,14 @@
 
 }
 
+.swiper-slide {
+    border-radius: 10px;
+}
+
 
 .swiper-button-prev-houses::after,
 .swiper-button-next-houses::after {
-    color: #fff;
+    color: $lightBrown;
     font-size: 18px;
     font-family: swiper-icons;
     text-transform: none !important;
@@ -76,11 +81,11 @@
 }
 
 .swiper-button-prev-houses {
-    left: 10px;
+    transform: translateX(-10px);
 }
 
 .swiper-button-next-houses {
-    right: 10px;
+    transform: translateX(10px);
 }
 
 .swiper-button-prev-houses:hover,
@@ -89,8 +94,8 @@
 }
 
 .swiper-container-houses {
-    overflow: hidden;
     padding: 0 50px;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -102,8 +107,32 @@
         flex-direction: column;
     }
 
+    .single-house__list {
+        margin-bottom: 25px;
+    }
+
     .single-house__item_slider {
         max-width: 100%;
-        margin-top: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media(max-width:550px) {
+    .swiper-container-houses {
+        padding: 0 25px;
+    }
+
+    .swiper-button-prev-houses,
+    .swiper-button-next-houses {
+        width: 40px;
+        height: 40px;
+    }
+
+    .single-house {
+        padding: 20px;
+    }
+
+    .single-house__sub-list  {
+        margin-left: 10px;
     }
 }

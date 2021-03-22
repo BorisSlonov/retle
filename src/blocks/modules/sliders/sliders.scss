@@ -55,6 +55,10 @@
 
     }
 
+    .single-house__item_text {
+        margin-right: 0;
+    }
+
     .swiper-slide img {
         width: 100%;
     }
@@ -66,9 +70,3 @@
     }
 }
 
-@media(max-width:420px) {
-    .swiper-slide {
-        max-height: 280px;
-        border-radius: 10px;
-    }
-}
