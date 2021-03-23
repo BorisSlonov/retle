@@ -879,6 +879,12 @@ img {
   justify-content: space-between;
 }
 
+.local__item_img img {
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 .local__col {
   flex-basis: calc(33.333% - 10px);
   background-color: #FDE8CD;
