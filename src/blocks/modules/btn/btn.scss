@@ -1,11 +1,11 @@
 .btn {
+    display: inline-block;
     font-size: 1.1rem;
-
     border-radius: 25px;
     color: $lightBrown;
     text-decoration: none;
     padding: 0.5rem 2rem;
-
+    cursor: pointer;
 
     &_main {
         display: inline-block;
