@@ -57,7 +57,15 @@
     }
 
     .single-house__item_text {
-        margin-right: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .single-house__item_text .btn {
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .swiper-slide img {
