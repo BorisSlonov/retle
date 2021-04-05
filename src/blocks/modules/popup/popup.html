@@ -6,12 +6,25 @@
         <span class="mainPopup__sub-title">
             и мы свяжемся с вами в ближайшее время
         </span>
-        <form action="#" class="mainPopup-form">
-            <input class="mainPopup-form__input" placeholder="Номер телефона" type="phone">
-            <input class="mainPopup-form__input" placeholder="Имя" type="name">
+        <form class="mainPopup-form" onsubmit="send(event, 'mailer/send.php')" method="post">
+            <input name="phone" class="mainPopup-form__input" placeholder="Номер телефона" type="phone">
+            <input name="name" class="mainPopup-form__input" placeholder="Имя" type="name">
             <button class="btn btn_main popupBtn">
                 Отправить
             </button>
         </form>
+
+        <div class="mainPopup__phone">
+            <h3>Или позвоните по телефону</h3>
+            <a href="tel:+79116074524">
+                <i class="fas fa-phone-alt"></i>
+                +7 911 607 45 24
+            </a>
+            <br>
+            <a href="tel:+79539012724">
+                <i class="fas fa-phone-alt"></i>
+                +7 953 901 27 24
+            </a>
+        </div>
     </div>
 </div>

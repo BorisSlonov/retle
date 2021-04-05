@@ -8,7 +8,7 @@
     flex-direction: column;
 
     &__input {
-        margin-top: 25px;
+        margin-top: 20px;
         border: none;
         border-bottom: 2px solid transparent;
         outline: none;
@@ -21,9 +21,22 @@
     }
 }
 .popupBtn {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .mainPopup__title {
     font-size: 1.8rem;
+}
+
+.mainPopup__phone {
+    text-align: center;
+    margin-top: 40px;
+
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: $darkBrown;
+        font-weight: 700;
+    }
 }

@@ -1,77 +1,122 @@
 <section id="catalog" class="section-houses">
     <div class="container">
-        <h2 class="main-h2">
+        <h2 class="main-h2  wow animate__animated animate__fadeIn">
             Отличный отдых по доступным ценам
         </h2>
         <span class="main-h2__sub-title">
-                В аренду любого домика входит постельное белье, полотенца и доступ беседке с мангалом
+            В аренду любого домика входит постельное белье, полотенца и доступ беседке с мангалом
         </span>
-        <div class="swiper-container-houses">
+        <div class="swiper-container-houses wow animate__animated animate__fadeInUp">
             <div class="houses swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №1
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 2 этажа
-                                </li>
-                                <li class="single-house__li">
-                                    — 2-4 человека
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет
-                                </li>
-                                <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                        <li>
-                                            — Каминчик
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="single-house__li">
-                                    — На 2-м этаже
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальная кровать
-                                        </li>
-                                       
-                                        <li>
-                                            — Вид со 2-го этажа на озеро
-                                        </li>
-                                    </ul>
-                                </li>
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №1
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 2 этажа
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2-4 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостиная совмещенная с небольшой кухней</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальный диван
+                                            </li>
+                                            <li>
+                                                — Обеденная зона
+                                            </li>
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>На 2-м этаже</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальная кровать
+                                            </li>
+                                            <li>
+                                                — Вид со 2-го этажа на озеро
 
-                            </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
 
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
                             @@include("../sliders/home1.html")
+
+
                         </div>
                     </div>
                 </div>
@@ -79,50 +124,87 @@
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №2
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 1 этаж
-                                </li>
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №2
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет на территории
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                <li class="single-house__li">
-                                    — 2 человека
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет на территории
-                                </li>
-                                <li class="single-house__li">
-                                    — Микроволновая печь
 
-                                </li>
-                                <li class="single-house__li">
-                                    — Холодильник
-                                </li>
-                                <li class="single-house__li">
-                                    — Электрическая плитка
-                                </li>
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
 
-                                <li class="single-house__li">
-                                    — Микроволновая печь
-                                </li>
-
-                                <li class="single-house__li">
-                                    — Чайник
-                                </li>
-                                <li class="single-house__li">
-                                    — 2 односпальные кровати
-                                </li>
-
-                                <li class="single-house__li">
-                                    — Каминчик
-                                </li>
-
-                            </ul>
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
@@ -134,50 +216,92 @@
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №3
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 1 этаж
-                                </li>
-                                <li class="single-house__li">
-                                    — 2 комнаты
-                                </li>
-                                <li class="single-house__li">
-                                    —  2 односпальные кровати
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет
-                                </li>
-                                <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                    </ul>
-                                </li>
 
-                            </ul>
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №3
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
@@ -189,50 +313,92 @@
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №4
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 1 этаж
-                                </li>
-                                <li class="single-house__li">
-                                    — 2 комнаты
-                                </li>
-                                <li class="single-house__li">
-                                    —  2 односпальные кровати
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет
-                                </li>
-                                <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                    </ul>
-                                </li>
 
-                            </ul>
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №4
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
@@ -244,50 +410,93 @@
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №5
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 1 этаж
-                                </li>
-                                <li class="single-house__li">
-                                    — 2 комнаты
-                                </li>
-                                <li class="single-house__li">
-                                    —  2 односпальные кровати
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет
-                                </li>
-                                <li class="single-house__li">
-                                    — Гостиная совмещенная с небольшой кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                    </ul>
-                                </li>
 
-                            </ul>
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №5
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
@@ -299,61 +508,108 @@
                 <div class="swiper-slide">
                     <div class="houses__row single-house">
                         <div class="single-house__item single-house__item_text">
-                            <h3 class="single-house__title">
-                                Домик №6
-                            </h3>
-                            <ul class="single-house__list">
-                                <li class="single-house__li">
-                                    — 2-х этажный
-                                </li>
-                                <li class="single-house__li">
-                                    — 3 номера по 2 человека
-                                </li>
-                                <li class="single-house__li">
-                                    — Душ, туалет в каждом номере
-                                </li>
-                                <li class="single-house__li">
-                                    — Гостиная совмещенная с кухней
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальный диван
-                                        </li>
-                                        <li>
-                                            — Обеденная зона
-                                        </li>
-                                        <li>
-                                            — Микроволновая печь
-                                        </li>
-                                        <li>
-                                            — Холодильник
-                                        </li>
-                                        <li>
-                                            — Электрическая плитка
-                                        </li>
-                                        <li>
-                                            — Чайник
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="single-house__li">
-                                    — На 2-м этаже
-                                    <ul class="single-house__sub-list">
-                                        <li>
-                                            — 2-х спальная кровать
-                                        </li>
-                                        <li>
-                                            — Каминчик
-                                        </li>
-                                        <li>
-                                            — Вид со 2-го этажа на озеро
-                                        </li>
-                                    </ul>
-                                </li>
-                            
-                            </ul>
-                            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
-                                Забронировать
-                            </a>
+
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №1
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 2 этажа
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 3 номера по 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет в каждом номере
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостиная совмещенная с  кухней</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальный диван
+                                            </li>
+                                            <li>
+                                                — Обеденная зона
+                                            </li>
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>На 2-м этаже</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальная кровать
+                                            </li>
+                                            <li>
+                                                — Вид со 2-го этажа на озеро
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                         <!-- item -->
                         <div class="single-house__item single-house__item_slider">
@@ -370,6 +626,106 @@
             <div class="swiper-button-prev swiper-button-prev-houses"></div>
             <div class="swiper-button-next swiper-button-next-houses"></div>
         </div>
+
+    </div>
+</section>
+
+<section class="more-services">
+    <div class="container">
+
+        <h2 class="main-h2">
+            Дополнительные услуги
+        </h2>
+
+        <div class="more-services__main-row">
+            <div class="more-services__col">
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Баня 2-4 человека. 2 часа
+                    </div>
+                    <div class="more-services__item">
+                        1500
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Большая баня 4-8 человек. 2 часа
+                    </div>
+                    <div class="more-services__item">
+                        2000
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Веник
+                    </div>
+                    <div class="more-services__item">
+                        200
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Простыня
+                    </div>
+                    <div class="more-services__item">
+                        100
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Услуги банщика
+                    </div>
+                    <div class="more-services__item">
+                        600
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="more-services__col">
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Беседка с мангалом. До 6 человек
+                    </div>
+                    <div class="more-services__item">
+                        1000
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Большая беседка. 20 - 30 человек
+                    </div>
+                    <div class="more-services__item">
+                        2500
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда велосипеда (взрослый)
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 200</span> <span>День - 600</span>
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда велосипеда (детский)
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 150</span> <span>День - 500</span>
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда надувной лодки
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 200</span> <span>День - 600</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </section>

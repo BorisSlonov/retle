@@ -2,3 +2,45 @@
     background-color: $darkGreen;
     padding: 25px 0;
 }
+
+.footer__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__item a {
+    text-decoration: none;
+    color: $lightBrown;
+    transition: all .3s;
+
+    &:hover {
+        color:darken($lightBrown, 10%)
+    }
+}
+
+.footer__vk {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+
+
+@media(max-width:505px) {
+    .footer__row {
+        flex-direction: column;
+    }
+
+    .footer__item:last-child {
+        margin-top: 20px;
+    }
+
+    .footer__item .header__logo {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+  
+}

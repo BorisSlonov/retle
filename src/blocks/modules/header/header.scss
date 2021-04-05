@@ -5,10 +5,11 @@
 .header {
     position: fixed;
     width: 100%;
-    top: 1rem;
     left: 0;
     z-index: 50;
     text-align: center;
+    background-color: $darkGreen;
+    transition: all .3s;
 
 
     &__body {
@@ -17,9 +18,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: .25rem 1.25rem;
-        background-color: $darkGreen;
-        border-radius: 10px;
+        padding: .25rem 0;
+
     }
 
     &__logo {
@@ -113,6 +113,11 @@
 
 
 
+.header__logo-name {
+    border-bottom: 2px solid #fde8cd7c;
+    padding-bottom: 3px;
+}
+
 
 
 @media(max-width:1024px) {
@@ -123,6 +128,8 @@
 
 
 @media (max-width: 767px) {
+
+   
     .header__list {
         position: fixed;
         z-index: 1000;
@@ -181,7 +188,7 @@
         height: 25px;
         right: 35px;
         width: 25px;
-        top: 33px;
+        top: 20px;
     }
 
     .header__burger span {
@@ -245,4 +252,72 @@
     .header__logo {
         flex-basis: 40%;
     }
+}
+
+.header.out {
+    transform: translateY(-100%);
+}
+
+
+
+//sub-header
+
+.sub-header-section {
+    background-color: $lightBrown;
+}
+
+.sub-header {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub-header__item a {
+    font-weight: 700;
+    text-decoration: none;
+    color: $darkBrown;
+    transition: all .3s;
+
+    &:hover {
+        color: darken($darkBrown, 20%)
+    }
+}
+
+@media(max-width:700px) {
+    .sub-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sub-header__item:first-child span:first-child {
+        display: none;
+    }
+
+    .sub-header__item:last-child {
+        margin-top: 20px;
+    }
+
+
+}
+
+@media(max-width:550px) {
+    .sub-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sub-header__item:first-child {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-header__item:first-child span:last-child {
+        margin-top: 0;
+    }
+}
+
+.message {
+    padding: 25px;
+    border-radius: 10px;
 }
