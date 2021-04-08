@@ -40,6 +40,11 @@
 
 .services__item_img {
     flex-basis: 50%;
+    img {
+    max-height: 400px;
+        min-height: 300px;
+        object-fit: cover;
+    }
 }
 
 .services__row_second {
