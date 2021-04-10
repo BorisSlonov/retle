@@ -6,12 +6,11 @@
         <span class="mainPopup__sub-title">
             и мы свяжемся с вами в ближайшее время
         </span>
-        <form class="mainPopup-form" onsubmit="send(event, 'mailer/send.php')" method="post">
-            <input name="phone" class="mainPopup-form__input" placeholder="Номер телефона" type="phone">
-            <input name="name" class="mainPopup-form__input" placeholder="Имя" type="name">
-            <button class="btn btn_main popupBtn">
-                Отправить
-            </button>
+        <form class="mainPopup-form" onsubmit="send(event, 'mailer/config.php')" method="post">
+            <input name="phone" class="mainPopup-form__input" placeholder="Номер телефона" required>
+            <input name="name" class="mainPopup-form__input" placeholder="Имя">
+            <input name="btn"  value="Отправить"  type="submit" class="btn btn_main popupBtn">
+              
         </form>
 
         <div class="mainPopup__phone">

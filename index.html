@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>База отдыха | Ретле</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Pacifico&family=Ubuntu:wght@500&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/1e77aeef46.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script>
+
+        // Отправка данных на сервер
+        function send(event, php) {
+            console.log("Отправка запроса");
+            event.preventDefault ? event.preventDefault() : event.returnValue = false;
+            var req = new XMLHttpRequest();
+            req.open('POST', php, true);
+            req.onload = function () {
+                if (req.status >= 200 && req.status < 400) {
+                    json = JSON.parse(this.response); // Ебанный internet explorer 11
+                    console.log(json);
+
+                    // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+                    if (json.result == "success") {
+                        // Если сообщение отправлено
+
+
+                        $.fancybox.open('<div class="message"><h2>Спасибо за заявку!</h2><p>Мы свяжемся с вами в ближайшее время</p></div>');
+
+                        function closePopup() {
+                            $.fancybox.close()
+                            $.fancybox.close()
+                        }
+
+                        setTimeout(closePopup, 3000);
+
+
+
+                    } else {
+                        // Если произошла ошибка
+                        alert("Ошибка. Сообщение не отправлено");
+                    }
+                    // Если не удалось связаться с php файлом
+                } else { alert("Ошибка сервера. Номер: " + req.status); }
+            };
+
+            // Если не удалось отправить запрос. Стоит блок на хостинге
+            req.onerror = function () { alert("Ошибка отправки запроса"); };
+            req.send(new FormData(event.target));
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <!-- burger -->
+
+<header class="header">
+    <div class="container">
+        <div class='header__body'>
+            <!-- logo -->
+            <a href="/" class='header__logo'>
+                <span class="header__logo-name">
+                    Ретле
+                </span>
+            </a>
+            <!-- burger -->
+            <div class='header__burger'>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- navigation -->
+            <nav class='header__menu'>
+                <!-- header__list -->
+                <ul class='header__list'>
+                    <li class=''>
+                        <a href='#baza-otdiha' class='header__link'>
+                            <span class="link-hover">
+                                база отдыха
+                            </span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#services' class='header__link'>
+                            <span class="link-hover">
+                                услуги
+                            </span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#catalog' class='header__link'>
+                            <span class="link-hover">
+                                домики
+                            </span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#local' class='header__link'>
+                            <span class="link-hover">
+                                рядом
+                            </span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
+                            <span class="">
+                                Заказать звонок
+                            </span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- header__list -->
+            </nav>
+            <!-- navigation -->
+        </div>
+    </div>
+
+
+
+
+
+    <section class="sub-header-section">
+
+        <div class="container">
+            <div class="sub-header">
+                <div class="sub-header__item">
+                    <span> <i class="fas fa-map-pin"></i> 70км от Великого Новгорода </span> 
+    
+                    <span> <i class="fas fa-map-pin"></i> 20 метров от озера Ильмень</span>
+                </div>
+                <div class="sub-header__item">
+                   <a href="tel:+79116074524">
+                    <i class="fas fa-phone-alt"></i>
+                    +7 911 607 45 24
+                   </a>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+
+
+</header>
+<!-- burger -->
+
+
+
+
+    <main class="main">
+
+    <section class="section-page1">
+    <div class="container">
+        <div class="page1">
+            <div class="page1__row">
+                <div class="page1__item page1__item_text  animate__animated animate__fadeIn">
+                    <h1 class="page1__title">
+                        <span style="display: block;">База отдыха </span>
+                        <span class="span-logo"><span class="colorBrLignt">«</span> Ретле <span class="colorBrLignt">»</span></span> 
+                        <span>ждет вас</span>
+                    </h1>
+                    <span class="page1__sub-tlte">
+                        Забронируйте домик уже сегодня
+                    </span>
+                    <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
+                        Забронировать
+                    </a>
+                </div>
+                <div class="page1__item page1__item_slider">
+                  
+
+                    <!-- Slider main container -->
+<div class="swiper-container swiper-container1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/screen1/6.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="baza-otdiha" class="section-baza">
+    <div class="container">
+        <div  class="baza">
+            <div class="baza__row">
+                <div class="baza__item baza__item_img   animate__animated animate__fadeInUp">
+                    <!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img src="img/sliders/health/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/health/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/health/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/health/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img src="img/sliders/health/4.jpg" alt="">
+        </div>
+     
+        <div class="swiper-slide">
+            <img src="img/sliders/health/6.jpg" alt="">
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                </div>
+                <div class="baza__item baza__item_text   animate__animated animate__fadeInUp">
+                    <h2 class="baza__title">
+                        Здоровый отдых!
+                    </h2>
+                    <p class="baza__text">
+                        База отдыха «Ретлё» располагается в самом живописном уголке Новгородской области, неподалёку от
+                        города курорта Старая Русса, в экологически чистой местности на берегу озера Ильмень, на
+                        расстоянии 60 километров от Великого Новгорода. Красивые обрывистые берега, галичные пляжи,
+                        чистая вода и свежий озерный воздух, уединение вдали от городского шума и суеты, радушное
+                        гостеприимство персонала оставляют незабываемые впечатления и создают уютную атмосферу для
+                        комфортного отдыха
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="services" class="section-services">
+    <div class="container">
+        <h2 class="main-h2">
+            Что мы предлагаем
+        </h2>
+
+        <div class="services">
+            <div class="services__row  wow animate__animated animate__fadeInUp">
+                <div class="services__item services__item_text">
+                    <h3 class="services__h3">
+                        Любителям <br>
+                        рыбалки
+                    </h3>
+                    <p class="services__text">
+                        Наша база располагается на знаменитом своим рыбным разнообразием озере Ильмень, тут Вы получите
+                        настоящее удовольствие от рыбалки. На озере Ильмень вы поймете, что означает настоящая русская
+                        рыбалка, клев на озере просто ошеломляющий, даже начинающему рыболову не остаться без улова. Тут
+                        возможно выловить крупные экземпляры леща, судака, щуку больших размеров, язя и другие виды рыб
+                    </p>
+                </div>
+                <div class="services__item services__item_img">
+                    <img src="img/services/1.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="services__row services__row_second  wow animate__animated animate__fadeInUp">
+                <div class="services__item services__item_text">
+                    <h3 class="services__h3">
+                        Любителям <br>
+                        активного отдыха
+                    </h3>
+                    <p class="services__text">
+                        Наша база предоставляет большой выбор развлечений. Здесь оптимальные условия для тех, кто любит
+                        спорт, не стоит на месте и ставит свое здоровье на первые позиции
+                    </p>
+                </div>
+                <div class="services__item services__item_img">
+                    <img src="img/services/2.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="services__row  wow animate__animated animate__fadeInUp">
+                <div class="services__item services__item_text">
+                    <h3 class="services__h3">
+                        Корпоративным <br>
+                        клиентам
+                    </h3>
+                    <p class="services__text">
+                        База отдыха «Ретлё» всегда радушно принимает не только семейные пары, отдельные группы туристов,
+                        но и организует программу отдыха для корпоративных клиентов. Веселые и дружные пикники,
+                        увлекательные прогулки, занятия спортом и просто совместное времяпровождение отличный повод для
+                        налаживания отношений и укрепления командного духа в коллективе
+                    </p>
+                </div>
+                <div class="services__item services__item_img">
+                    <img src="img/services/3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section class="section-callback">
+    <div class="container">
+        <div class="promo-callback  wow animate__animated animate__fadeIn">
+            <h2 class="promo-callback__title">
+                Закажите обратный звонок и мы свяжемся с вами в ближайшее время
+            </h2>
+            <a data-fancybox data-src='#mainPopup' class='btn btn_main'>
+                Заказать звонок
+            </a>
+        </div>
+    </div>
+</section>
+    <section id="catalog" class="section-houses">
+    <div class="container">
+        <h2 class="main-h2  wow animate__animated animate__fadeIn">
+            Отличный отдых по доступным ценам
+        </h2>
+        <span class="main-h2__sub-title">
+            В аренду любого домика входит постельное белье, полотенца и доступ беседке с мангалом
+        </span>
+        <div class="swiper-container-houses wow animate__animated animate__fadeInUp">
+            <div class="houses swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №1
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 2 этажа
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2-4 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостиная совмещенная с небольшой кухней</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальный диван
+                                            </li>
+                                            <li>
+                                                — Обеденная зона
+                                            </li>
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>На 2-м этаже</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальная кровать
+                                            </li>
+                                            <li>
+                                                — Вид со 2-го этажа на озеро
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        2500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home1/6.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №2
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет на территории
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        1500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        2000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home2/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home2/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home2/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home2/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home2/5.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №3
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 - 4 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/6.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/7.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/8.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/9.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/10.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/11.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home3/12.jpg" alt="">
+        </div>
+
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №4
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 - 4  человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home4/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home4/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home4/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home4/4.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №5
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 1 этаж
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 - 4 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 2 односпальные кровати
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостинная совмещенная с небольшой кухей</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки
+                                    </div>
+                                    <div class="house-prices__item">
+                                        3500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        4000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home5/6.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="houses__row single-house">
+                        <div class="single-house__item single-house__item_text">
+
+
+                            <div class="single-house__info">
+                                <h3 class="single-house__title">
+                                    Домик №6
+                                </h3>
+                                <ul class="single-house__list houses-accordeon">
+                                    <li class="single-house__li">
+                                        — 2 этажа
+                                    </li>
+                                    <li class="single-house__li">
+                                        — 3 номера по 2 человека
+                                    </li>
+                                    <li class="single-house__li">
+                                        — Душ, туалет в каждом номере
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>Гостиная совмещенная с  кухней</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальный диван
+                                            </li>
+                                            <li>
+                                                — Обеденная зона
+                                            </li>
+                                            <li>
+                                                — Микроволновая печь
+                                            </li>
+                                            <li>
+                                                — Холодильник
+                                            </li>
+                                            <li>
+                                                — Электрическая плитка
+                                            </li>
+                                            <li>
+                                                — Чайник
+                                            </li>
+                                            <li>
+                                                — Каминчик
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="single-house__li">
+                                        <a class="acc-head"><span>На 2-м этаже</span></a>
+                                        <ul class="single-house__sub-list acc-body">
+                                            <li>
+                                                — 2-х спальная кровать
+                                            </li>
+                                            <li>
+                                                — Вид со 2-го этажа на озеро
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="house-prices">
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Цена в сутки (номер)
+                                    </div>
+                                    <div class="house-prices__item">
+                                        7500
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        Пятница - суббота
+                                    </div>
+                                    <div class="house-prices__item">
+                                        9000
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        От 5 дней
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+                                <div class="house-prices__row">
+                                    <div class="house-prices__item">
+                                        01.10 — 01.04
+                                    </div>
+                                    <div class="house-prices__item">
+                                        Скидка 10%
+                                    </div>
+                                </div>
+
+                                <div class="house-prices__row">
+                                    <a data-fancybox data-src='#mainPopup' class='btn btn_main house-prices__btn'>
+                                        Забронировать
+                                    </a>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <!-- item -->
+                        <div class="single-house__item single-house__item_slider">
+                            <!-- Slider main container -->
+<div class="swiper-container-home">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/6.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/7.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/8.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/9.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/10.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/11.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+            <img loading="lazy"  src="img/home6/12.jpg" alt="">
+        </div>
+
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev swiper-button-prev-houses"></div>
+            <div class="swiper-button-next swiper-button-next-houses"></div>
+        </div>
+
+    </div>
+</section>
+
+<section class="more-services">
+    <div class="container">
+
+        <h2 class="main-h2">
+            Дополнительные услуги
+        </h2>
+
+        <div class="more-services__main-row">
+            <div class="more-services__col">
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Баня 2-4 человека. 2 часа
+                    </div>
+                    <div class="more-services__item">
+                        1500
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Большая баня 4-8 человек. 2 часа
+                    </div>
+                    <div class="more-services__item">
+                        2000
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Веник
+                    </div>
+                    <div class="more-services__item">
+                        200
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Простыня
+                    </div>
+                    <div class="more-services__item">
+                        100
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Услуги банщика
+                    </div>
+                    <div class="more-services__item">
+                        600
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="more-services__col">
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Беседка с мангалом. До 6 человек
+                    </div>
+                    <div class="more-services__item">
+                        1000
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Большая беседка. 20 - 30 человек
+                    </div>
+                    <div class="more-services__item">
+                        2500
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда велосипеда (взрослый)
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 200</span> <span>День - 600</span>
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда велосипеда (детский)
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 150</span> <span>День - 500</span>
+                    </div>
+                </div>
+                <div class="more-services__row wow  animate__animated animate__fadeInUp">
+                    <div class="more-services__item">
+                        Аренда надувной лодки
+                    </div>
+                    <div class="more-services__item more-services__item_rent">
+                        <span>1 час - 200</span> <span>День - 600</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+    <section id="local" class="section-local">
+    <div class="container">
+        <h2 class="main-h2">
+            Интересные места рядом
+        </h2>
+        <div class="local">
+
+            <div class="local__row">
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/1.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Санкт-Петербург
+                        </h3>
+                        <p class="local__text">
+                            Северная столица России
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/2.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Старая Русса
+                        </h3>
+                        <p class="local__text">
+                            Лучший курорт России с 2007 года
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/3.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Озеро Ильмень
+                        </h3>
+                        <p class="local__text">
+                            Славянское море
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="local__row">
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/4.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Витославлицы
+                        </h3>
+                        <p class="local__text">
+                            Всемирно известный музей деревянного зодчества
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/5.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Чудотворное озеро
+                        </h3>
+                        <p class="local__text">
+                            Минюшинских отроков
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/6.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Юрьев монастырь
+                        </h3>
+                        <p class="local__text">
+                            Один из древнейших монастырей России
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="local__row">
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/7.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Великий Новгород
+
+                        </h3>
+                        <p class="local__text">
+                            Родина России
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/8.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Рдейский монастырь
+                        </h3>
+                        <p class="local__text">
+                            Галечные пляжи Коростыни
+                        </p>
+                    </div>
+                </div>
+
+                <div class="local__col  wow animate__animated animate__fadeInUp">
+                    <div class="local__item local__item_img">
+                        <img src="img/local/9.jpg" alt="">
+                    </div>
+                    <div class="local__item local__item_text">
+                        <h3 class="local__h3">
+                            Николо-Косинский монастырь
+                        </h3>
+                        <p class="local__text">
+                            Действующий монастырь 12 века
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+    <div class="section-map">
+
+    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ada8fa4660bd7862c07f3683b5e5178f60dfdaf3969e4a4a53e2c23f9b12235aa&amp;source=constructor" width="100%" height="420" frameborder="0"></iframe>
+
+</div>
+
+    <div id="mainPopup" style="display: none;">
+    <div class="mainPopup">
+        <h2 class="mainPopup__title">
+            Оставьте заявку
+        </h2>
+        <span class="mainPopup__sub-title">
+            и мы свяжемся с вами в ближайшее время
+        </span>
+        <form class="mainPopup-form" onsubmit="send(event, 'mailer/config.php')" method="post">
+            <input name="phone" class="mainPopup-form__input" placeholder="Номер телефона" required>
+            <input name="name" class="mainPopup-form__input" placeholder="Имя">
+            <input name="btn"  value="Отправить"  type="submit" class="btn btn_main popupBtn">
+              
+        </form>
+
+        <div class="mainPopup__phone">
+            <h3>Или позвоните по телефону</h3>
+            <a href="tel:+79116074524">
+                <i class="fas fa-phone-alt"></i>
+                +7 911 607 45 24
+            </a>
+            <br>
+            <a href="tel:+79539012724">
+                <i class="fas fa-phone-alt"></i>
+                +7 953 901 27 24
+            </a>
+        </div>
+    </div>
+</div>
+</main>
+
+    <footer class="footer">
+
+    <div class="container">
+        <div class="footer__row">
+            <div class="footer__item">
+                <!-- logo -->
+                <a href="/" class='header__logo'>
+                    <span class="header__logo-name">
+                        Ретле
+                    </span>
+                </a>
+            </div>
+            <div class="footer__item">
+                <a class="footer__vk" target="_blank" href="https://vk.com/bazaretle">
+                    <i class="fab fa-vk"></i>
+                    <span>Вконтакте</span>
+                </a>
+                <a href="tel:+79116074524">
+                    <i class="fas fa-phone-alt"></i>
+                    +7 911 607 45 24
+                </a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+        crossorigin="anonymous"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+</body>
+
+</html>
